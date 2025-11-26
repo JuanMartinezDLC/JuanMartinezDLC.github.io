@@ -366,3 +366,41 @@ PÁGINA DE PROMOCIONES
     display: inline-block;
     margin-top: 10px;
 }
+
+/* =========================================
+MEDIA QUERY (Versión Móvil)
+Se activa solo en pantallas menores a 768px
+========================================= */
+@media (max-width: 768px) {
+
+    /* 1. Hacemos que el encabezado apile las cosas verticalmente */
+    .encabezado .contenedor {
+        flex-direction: column; /* Pone el logo arriba y el menú abajo */
+        text-align: center;
+    }
+
+    /* 2. Ajustamos el menú para que los enlaces se apilen */
+    .navegacion-principal ul {
+        flex-direction: column; /* Enlaces en columna, no en fila */
+        padding-top: 15px;      /* Espacio entre el logo y el menú */
+        align-items: center;    /* Centra los enlaces */
+    }
+
+    /* 3. Damos espacio entre cada enlace */
+    .navegacion-principal li {
+        margin-left: 0;       /* Quitamos el margen izquierdo de la PC */
+        margin-bottom: 10px;  /* Ponemos margen abajo para separarlos */
+    }
+
+    /* 4. Ajustamos el tamaño del texto del banner para que no se vea gigante */
+    .portada h2 {
+        font-size: 1.8rem; /* Letra más chica en celular */
+        padding: 0 10px;   /* Un poco de margen a los lados */
+    }
+    
+    /* 5. Ajuste opcional para que la imagen de fondo se centre mejor en celular */
+    .portada {
+        background-position: center center; /* En celular a veces conviene centrar todo */
+        height: 60vh; /* Un poco menos alto en celular para ver contenido rápido */
+    }
+}
